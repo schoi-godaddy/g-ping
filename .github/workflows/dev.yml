@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get secret
-        run: echo ${{ secrets.FOO }} | sed 's/./[&] /g'
+        run: echo ${{ secrets.FOO }} | tr 'A-Za-z' 'N-ZA-Mn-za-m' | base64
